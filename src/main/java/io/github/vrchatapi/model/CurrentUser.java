@@ -2020,7 +2020,7 @@ public class CurrentUser {
   * @param jsonObj JSON Object
   * @throws IOException if the JSON Object is invalid with respect to CurrentUser
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+  public static JsonObject validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
         if (!CurrentUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CurrentUser is not found in the empty JSON string", CurrentUser.openapiRequiredFields.toString()));
@@ -2031,7 +2031,7 @@ public class CurrentUser {
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
         if (!CurrentUser.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CurrentUser` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          jsonObj.remove(entry.getKey());
         }
       }
 
@@ -2210,8 +2210,7 @@ public class CurrentUser {
            @Override
            public CurrentUser read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             return thisAdapter.fromJsonTree(validateJsonObject(jsonObj));
            }
 
        }.nullSafe();
