@@ -1805,7 +1805,6 @@ public class CurrentUser {
         Objects.equals(this.updatedAt, currentUser.updatedAt) &&
         Objects.equals(this.userIcon, currentUser.userIcon) &&
         Objects.equals(this.username, currentUser.username);
-        Objects.equals(this.queuedInstance, currentUser.queuedInstance);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
