@@ -2021,6 +2021,7 @@ public class CurrentUser {
   * @throws IOException if the JSON Object is invalid with respect to CurrentUser
   */
   public static JsonObject validateJsonObject(JsonObject jsonObj) throws IOException {
+      JsonObject json = jsonObj;
       if (jsonObj == null) {
         if (!CurrentUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CurrentUser is not found in the empty JSON string", CurrentUser.openapiRequiredFields.toString()));
@@ -2187,6 +2188,8 @@ public class CurrentUser {
       if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
+
+      return json;
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
