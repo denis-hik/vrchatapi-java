@@ -2032,7 +2032,7 @@ public class CurrentUser {
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
         if (!CurrentUser.openapiFields.contains(entry.getKey())) {
-          jsonObj.remove(entry.getKey());
+          json.remove(entry.getKey());
         }
       }
 
