@@ -15,7 +15,7 @@ rm src/main/java/io/github/vrchatapi/model -rf
 --git-repo-id=vrchatapi-java \
 -o . \
 -i https://raw.githubusercontent.com/vrchatapi/specification/gh-pages/openapi.yaml \
---http-user-agent="vrchatapi-java"
+--http-user-agent="vrchatapi-java/12.2"
 
 # Remove unneccesary copy of spec
 rm api/ -rf
