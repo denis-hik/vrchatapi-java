@@ -23,6 +23,7 @@ public class Configuration {
      * @return Default API client
      */
     public static ApiClient getDefaultApiClient() {
+        defaultApiClient.addDefaultHeader("User-Agent", "VRCat/app");
         return defaultApiClient;
     }
 
@@ -33,6 +34,8 @@ public class Configuration {
      * @param apiClient API client
      */
     public static void setDefaultApiClient(ApiClient apiClient) {
+
         defaultApiClient = apiClient;
+        defaultApiClient.addDefaultHeader("User-Agent", "VRCat/app");
     }
 }
