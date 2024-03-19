@@ -135,7 +135,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("vrchatapi-java");
+        setUserAgent("vrchatapi-java/12.2");
 
         authentications = new HashMap<String, Authentication>();
     }
