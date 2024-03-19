@@ -92,6 +92,10 @@ public class CurrentUser {
   @SerializedName(SERIALIZED_NAME_BIO_LINKS)
   private List<String> bioLinks = new ArrayList<>();
 
+  public static final String SERIALIZED_QUED_INSTANCE= "queuedInstance";
+  @SerializedName(SERIALIZED_QUED_INSTANCE)
+  private String queuedInstance = "";
+
   public static final String SERIALIZED_NAME_CURRENT_AVATAR = "currentAvatar";
   @SerializedName(SERIALIZED_NAME_CURRENT_AVATAR)
   private String currentAvatar;
@@ -1801,6 +1805,7 @@ public class CurrentUser {
         Objects.equals(this.updatedAt, currentUser.updatedAt) &&
         Objects.equals(this.userIcon, currentUser.userIcon) &&
         Objects.equals(this.username, currentUser.username);
+        Objects.equals(this.queuedInstance, currentUser.queuedInstance);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1809,7 +1814,7 @@ public class CurrentUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acceptedTOSVersion, acceptedPrivacyVersion, accountDeletionDate, accountDeletionLog, activeFriends, allowAvatarCopying, bio, bioLinks, currentAvatar, currentAvatarAssetUrl, currentAvatarImageUrl, currentAvatarThumbnailImageUrl, currentAvatarTags, dateJoined, developerType, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friends, hasBirthday, hideContentFilterSettings, userLanguage, userLanguageCode, hasEmail, hasLoggedInFromClient, hasPendingEmail, homeLocation, id, isFriend, lastActivity, lastLogin, lastPlatform, obfuscatedEmail, obfuscatedPendingEmail, oculusId, googleId, picoId, viveId, offlineFriends, onlineFriends, pastDisplayNames, presence, profilePicOverride, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userIcon, username);
+    return Objects.hash(acceptedTOSVersion, acceptedPrivacyVersion, accountDeletionDate, accountDeletionLog, activeFriends, allowAvatarCopying, bio, bioLinks, currentAvatar, currentAvatarAssetUrl, currentAvatarImageUrl, currentAvatarThumbnailImageUrl, currentAvatarTags, dateJoined, developerType, displayName, emailVerified, fallbackAvatar, friendGroupNames, friendKey, friends, hasBirthday, hideContentFilterSettings, userLanguage, userLanguageCode, hasEmail, hasLoggedInFromClient, hasPendingEmail, homeLocation, id, isFriend, lastActivity, lastLogin, lastPlatform, obfuscatedEmail, obfuscatedPendingEmail, oculusId, googleId, picoId, viveId, offlineFriends, onlineFriends, pastDisplayNames, presence, profilePicOverride, state, status, statusDescription, statusFirstTime, statusHistory, steamDetails, steamId, tags, twoFactorAuthEnabled, twoFactorAuthEnabledDate, unsubscribe, updatedAt, userIcon, username, queuedInstance);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1882,6 +1887,7 @@ public class CurrentUser {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    userIcon: ").append(toIndentedString(userIcon)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    queuedInstance: ").append(toIndentedString(queuedInstance)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1963,6 +1969,7 @@ public class CurrentUser {
     openapiFields.add("updated_at");
     openapiFields.add("userIcon");
     openapiFields.add("username");
+    openapiFields.add("queuedInstance");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
